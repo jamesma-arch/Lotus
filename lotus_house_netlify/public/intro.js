@@ -8,7 +8,7 @@
   screen.setAttribute('role','dialog');
   screen.setAttribute('aria-modal','true');
   screen.setAttribute('aria-label','Lotus House introduction');
-  screen.innerHTML='<div class="intro-grain" aria-hidden="true"></div><div class="intro-halo" aria-hidden="true"></div><div class="intro-content"><div class="intro-logo-wrap"><img class="intro-logo" src="./assets/intro-logo.svg" alt="Lotus House crest"></div><p class="intro-kicker">BANGKOK · ONE NIGHT · SEVEN GUESTS</p><div class="intro-rule" aria-hidden="true"></div><p class="intro-line">Raise a glass. Trust nobody.</p><p class="intro-finale">EVERY SECRET HAS ITS PRICE.</p><div class="intro-progress" aria-hidden="true"><span></span></div><div class="intro-actions"><button type="button" id="intro-begin">Begin with sound ♪</button><button type="button" class="intro-quiet" id="intro-silent">Continue silently</button></div><button type="button" class="intro-skip" id="intro-skip" hidden>Skip intro ↗</button></div>';
+  screen.innerHTML='<div class="cinema-backdrop" aria-hidden="true"></div><div class="cinema-vignette" aria-hidden="true"></div><div class="cinema-letterbox cinema-top" aria-hidden="true"></div><div class="cinema-letterbox cinema-bottom" aria-hidden="true"></div><div class="cinema-sheen" aria-hidden="true"></div><div class="intro-content"><p class="intro-kicker">AN EVENING AT LOTUS HOUSE</p><div class="intro-logo-wrap"><img class="intro-logo" src="./assets/intro-logo.svg" alt="The Last Toast at Lotus House — Bangkok"></div><div class="cinema-divider" aria-hidden="true"><span>✧</span></div><p class="intro-line">RAISE A GLASS. TRUST NOBODY.</p><p class="intro-finale">SEVEN GUESTS. ONE SECRET.</p><div class="intro-progress" aria-hidden="true"><span></span></div><div class="intro-actions"><button type="button" id="intro-begin">ENTER WITH SOUND <span aria-hidden="true">↗</span></button><button type="button" class="intro-quiet" id="intro-silent">Continue without sound</button></div><button type="button" class="intro-skip" id="intro-skip" hidden>Skip opening ↗</button></div>';
   document.body.appendChild(screen);
   let ctx=null,master=null,timeout=null,finished=false,playing=false;
   const finish=()=>{
@@ -33,8 +33,8 @@
     const t=ctx.currentTime+.03;
     master=ctx.createGain();
     master.gain.setValueAtTime(.0001,t);
-    master.gain.linearRampToValueAtTime(.26,t+.45);
-    master.gain.setValueAtTime(.26,t+8.5);
+    master.gain.linearRampToValueAtTime(.12,t+.65);
+    master.gain.setValueAtTime(.12,t+8.5);
     master.gain.exponentialRampToValueAtTime(.0001,t+9.85);
     master.connect(ctx.destination);
     const instrument=(frequency,when,length,loudness,shape='sine',attack=.015,release=.3,filterHz=0)=>{
