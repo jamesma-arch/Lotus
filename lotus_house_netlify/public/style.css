@@ -42,3 +42,10 @@
 @media(max-width:540px){.intro-mark{font-size:58px}.lotus-intro h1{letter-spacing:.04em}.lotus-intro h1 span{letter-spacing:.08em}.intro-content{padding:22px 8px}.intro-kicker{letter-spacing:.14em}}
 @media(prefers-reduced-motion:reduce){.lotus-intro *{animation:none!important}.intro-playing .intro-progress{opacity:1}.intro-playing .intro-progress span{width:100%}.intro-playing .intro-finale{opacity:1;transform:none}}
 @media print{.lotus-intro{display:none!important}}
+
+
+/* Image-led Lotus House intro; scales gracefully on phones. */
+.intro-logo-wrap{display:flex;justify-content:center;align-items:center;max-width:min(72vw,370px);margin:0 auto 17px}
+.intro-logo{display:block;width:100%;max-height:43vh;object-fit:contain;filter:drop-shadow(0 0 24px rgba(212,170,90,.29))}
+.intro-playing .intro-logo-wrap{animation:intro-rise 2.2s ease-out both}
+@media(max-width:540px){.intro-logo-wrap{max-width:min(74vw,300px)}.intro-rule{margin:14px auto}.intro-line{margin-top:16px}.intro-progress{margin-top:22px}}
